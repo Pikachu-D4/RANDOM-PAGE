@@ -1142,6 +1142,99 @@ main.portfolio-page {
   filter: none;
 }
 
+
+/* 3D motion graphics layer */
+.mograph-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.mograph-grid {
+  position: absolute;
+  left: 50%;
+  bottom: -120px;
+  width: min(900px, 90vw);
+  height: 380px;
+  transform: translateX(-50%) rotateX(72deg);
+  background-image:
+    linear-gradient(rgba(159, 175, 255, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(159, 175, 255, 0.24) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 78%);
+  opacity: 0.42;
+  animation: gridShift 18s linear infinite;
+}
+
+.mograph-cube {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  transform-style: preserve-3d;
+  animation: cubeDrift 14s ease-in-out infinite;
+}
+
+.mograph-cube .face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(215, 228, 255, 0.7);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.12), rgba(157, 180, 255, 0.24));
+  box-shadow: inset 0 0 35px rgba(212, 222, 255, 0.24);
+  backdrop-filter: blur(2px);
+}
+
+.mograph-cube .front { transform: translateZ(46px); }
+.mograph-cube .back { transform: rotateY(180deg) translateZ(46px); }
+.mograph-cube .left { transform: rotateY(-90deg) translateZ(46px); }
+.mograph-cube .right { transform: rotateY(90deg) translateZ(46px); }
+.mograph-cube .top { transform: rotateX(90deg) translateZ(46px); }
+.mograph-cube .bottom { transform: rotateX(-90deg) translateZ(46px); }
+
+.cube-a {
+  top: 16%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.cube-b {
+  right: 14%;
+  top: 50%;
+  width: 122px;
+  height: 122px;
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+
+.cube-b .front,
+.cube-b .back,
+.cube-b .left,
+.cube-b .right,
+.cube-b .top,
+.cube-b .bottom {
+  transform-origin: center;
+}
+
+.cube-b .front { transform: translateZ(61px); }
+.cube-b .back { transform: rotateY(180deg) translateZ(61px); }
+.cube-b .left { transform: rotateY(-90deg) translateZ(61px); }
+.cube-b .right { transform: rotateY(90deg) translateZ(61px); }
+.cube-b .top { transform: rotateX(90deg) translateZ(61px); }
+.cube-b .bottom { transform: rotateX(-90deg) translateZ(61px); }
+
+.mograph-orb {
+  position: absolute;
+  top: 22%;
+  right: 26%;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(188, 167, 255, 0.38) 38%, rgba(96, 165, 250, 0.06) 70%);
+  box-shadow: 0 22px 40px rgba(143, 165, 252, 0.25), inset -20px -20px 40px rgba(255, 255, 255, 0.2);
+  animation: orbFloat 9s ease-in-out infinite;
+  filter: blur(0.2px);
+}
+
 /* Morphing SVG */
 .morph-svg {
   position: absolute;
@@ -1171,6 +1264,24 @@ main.portfolio-page {
 }
 
 /* ─── KEYFRAMES ─── */
+
+@keyframes cubeDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(-18deg) rotateY(18deg); }
+  25% { transform: translate3d(26px, -18px, 40px) rotateX(10deg) rotateY(110deg); }
+  50% { transform: translate3d(-18px, -34px, -10px) rotateX(40deg) rotateY(220deg); }
+  75% { transform: translate3d(-30px, 14px, 50px) rotateX(-8deg) rotateY(320deg); }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.06); }
+}
+
+@keyframes gridShift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 42px, 42px 0; }
+}
+
 @keyframes floatBlob {
   0%, 100% { transform: translateY(0) translateX(0) scale(1); }
   33% { transform: translateY(-18px) translateX(12px) scale(1.05); }
@@ -1280,7 +1391,7 @@ main.portfolio-page {
   .about-visual-card { width: 230px; height: 270px; }
   .about-mini-card, .about-mini-card-2 { display: none; }
 
-  .morph-svg { display: none; }
+  .morph-svg, .mograph-stage { display: none; }
 }
 
 /* Hide Next.js dev indicator portal */

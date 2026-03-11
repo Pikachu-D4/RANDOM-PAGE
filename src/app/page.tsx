@@ -310,6 +310,27 @@ export default function Home() {
         <div className="geo-shape geo-diamond" />
         <div className="geo-shape geo-circle" />
         <div className="geo-shape geo-square" />
+        {/* 3D motion-graphics scene */}
+        <div className="mograph-stage" aria-hidden="true">
+          <div className="mograph-grid" />
+          <div className="mograph-orb" />
+          <div className="mograph-cube cube-a">
+            <span className="face front" />
+            <span className="face back" />
+            <span className="face left" />
+            <span className="face right" />
+            <span className="face top" />
+            <span className="face bottom" />
+          </div>
+          <div className="mograph-cube cube-b">
+            <span className="face front" />
+            <span className="face back" />
+            <span className="face left" />
+            <span className="face right" />
+            <span className="face top" />
+            <span className="face bottom" />
+          </div>
+        </div>
         {particles.map((p) => (
           <span
             key={p.id}
