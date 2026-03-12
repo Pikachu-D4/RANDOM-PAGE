@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Aether Studio | Creative Developer & Video Editor",
+  title: "Eomeg Studio | Creative Developer & Video Editor",
   description:
     "Premium creative portfolio showcasing cinematic video edits and high-converting website experiences.",
 };

@@ -371,7 +371,7 @@ export default function Home() {
 
       {/* Sticky nav */}
       <header className="site-nav">
-        <a href="#home" className="brand">Aether<span className="brand-dot">.</span></a>
+        <a href="#home" className="brand">Eomeg<span className="brand-dot">.</span></a>
         <nav>
           <a href="#work">Work</a>
           <a href="#about">About</a>
@@ -777,7 +777,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <span className="brand">Aether<span className="brand-dot">.</span></span>
+            <span className="brand">Eomeg<span className="brand-dot">.</span></span>
             <p>Crafted for standout brands. Available worldwide.</p>
           </div>
           <div className="footer-links">
@@ -787,7 +787,7 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </div>
           <div className="footer-right">
-            <p>© {new Date().getFullYear()} Aether Studio.</p>
+            <p>© {new Date().getFullYear()} Eomeg Studio.</p>
             <a href="#home">Back to top <ArrowUpRight size={13} /></a>
           </div>
         </div>
