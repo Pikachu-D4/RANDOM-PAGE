@@ -1039,40 +1039,6 @@ main.portfolio-page {
   overflow: hidden;
 }
 
-
-
-/* 3D glass spheres overlay */
-.floating-glass-spheres,
-.glass-spheres-fallback {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.glass-spheres-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  opacity: 0.92;
-}
-
-.glass-spheres-fallback {
-  filter: blur(0.2px);
-}
-
-.glass-fallback-blob {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.8), rgba(212, 225, 255, 0.28) 55%, rgba(168, 139, 250, 0.1));
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 16px 32px rgba(139, 165, 230, 0.18), inset 0 6px 16px rgba(255, 255, 255, 0.45);
-}
-
-.glass-fallback-blob.blob-a { width: 120px; height: 120px; top: 15%; left: 12%; }
-.glass-fallback-blob.blob-b { width: 95px; height: 95px; right: 12%; top: 38%; }
-.glass-fallback-blob.blob-c { width: 140px; height: 140px; left: 46%; bottom: 16%; }
-
 /* Blobs */
 .blob {
   position: absolute;
@@ -1384,9 +1350,6 @@ main.portfolio-page {
 }
 
 @media (max-width: 780px) {
-
-
-  .floating-glass-spheres { opacity: 0.75; }
   .site-nav {
     border-radius: 1rem;
     flex-direction: column;
