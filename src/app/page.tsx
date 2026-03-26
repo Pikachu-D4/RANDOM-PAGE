@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import dynamic from "next/dynamic";
 import {
   AnimatePresence,
   motion,
@@ -143,10 +142,6 @@ const processSteps = [
   { num: "04", title: "Delivery", desc: "Fast turnaround, revisions included, files ready to launch." },
 ];
 
-
-const FloatingGlassSpheres = dynamic(() => import("@/components/FloatingGlassSpheres"), {
-  ssr: false,
-});
 const marqueeItems = [
   "Video Editing", "Web Design", "Motion Graphics", "Brand Films",
   "Creative Direction", "Social Content", "UI/UX Design", "Visual Storytelling",
@@ -299,7 +294,6 @@ export default function Home() {
 
       {/* Ambient background */}
       <div className="ambient-bg">
-        <FloatingGlassSpheres />
         <div className="blob blob-one" />
         <div className="blob blob-two" />
         <div className="blob blob-three" />
